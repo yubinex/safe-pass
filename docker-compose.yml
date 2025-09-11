@@ -1,0 +1,16 @@
+services:
+  safe_pass_postgres:
+    image: postgres:15
+    container_name: safe_pass_postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-safe_pass_development}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - safe_pass_postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  safe_pass_postgres_data:
