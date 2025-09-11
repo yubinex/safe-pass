@@ -1,0 +1,9 @@
+{
+  "languages": {
+    "HTML/ERB": {
+      "tab_size": 2,
+      "hard_tabs": false,
+      "soft_wrap": "editor_width"
+    }
+  }
+}
